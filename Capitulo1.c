@@ -34,7 +34,7 @@ int    main()
 
 ////----SEC 1.5.2----////
     //DESC:Contar caracteres
-
+/*
 int    main()
     {
         long cuentaLong=0; //Variable para contar cuantos caracteres
@@ -52,7 +52,55 @@ int    main()
         printf("%.0f\n",cuentaDouble); //Imprimi sin decimales
 
 
-
-
     }
+*/
+//END SEC 1.5.2
+
+////----SEC 1.5.2----////
+//DESC: Cuenta la cantidad de salto de lineas
+/*
+int main ()
+{
+    int c, nl;
+    nl=0;
+    while((c=getchar())!=EOF)
+        if (c=='\n')
+            ++nl;
+    printf("La cantidad de lineas son: ");
+    printf("%d\n",nl);
+
+
+}
+*/
+//END SEC 1.5.2
+
+
+////----Exercise 1.8 ----////
+//@brief cuenta la cantidad de lines, tab y espacios
+/*
+int main()
+{
+
+    int c, nl=0 , nt=0 , nb =0;
+
+    printf("Ingrese el texto \n");
+    while((c=getchar())!=EOF)
+    {
+        if (c=='\n')  ++nl;
+        if (c=='\t')
+            ++nt;
+        if (c==' ')
+            ++nb;
+    }
+    printf("La cantidad de lineas son: ");
+    printf("%d\n",nl);
+    printf("La cantidad de tabs son: ");
+    printf("%d\n",nt);
+    printf("La cantidad de espacios son: ");
+    printf("%d\n",nb);
+}
+*/
+////END Exercise 1.8
+
+
 

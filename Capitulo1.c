@@ -107,7 +107,7 @@ int main()
 //@brief cuenta las lineas, las palabras y los caracteres
 
 
-
+/*
 
 #define IN  1   //inside a word
 #define OUT 0   //Outside a word
@@ -130,9 +130,39 @@ int main()
     }
     printf("%d %d %d \n", numLines, numWord, numchar);
 }
+*/
+
+//END SEC 1.5.4
 
 
 
+////----SEC 1.6----////
+//@brief Uso de Arrays
+
+main()
+{
+
+    int c,i, nWhite, nOther;
+    int ndigit[10];
+
+    nWhite=nOther=0;
+    for (i=0;i<10;++i)
+        ndigit[i]=0;
+
+    while ((c=getchar())!=EOF)
+        if (c>='0' && c<='9')
+            ++ndigit[c-'0'];
+        else if (c==' ' || c=='\n' || c=='\t')
+            ++nWhite;
+        else
+            ++nOther;
+
+    printf("Digits =");
+    for (i=0; i < 10 ; ++i)
+        printf(" %d= %d \n", i, ndigit[i]);
+    printf(", white space= %d, Other= %d \n", nWhite, nOther);
 
 
+}
 
+//END SEC 1.6

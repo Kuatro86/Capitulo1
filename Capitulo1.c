@@ -76,7 +76,7 @@ int main ()
 
 
 ////----Exercise 1.8 ----////
-//@brief cuenta la cantidad de lines, tab y espacios
+//@brief cuenta la cantidad de lineas, tab y espacios
 /*
 int main()
 {
@@ -101,6 +101,38 @@ int main()
 }
 */
 ////END Exercise 1.8
+
+
+////----SEC 1.5.4----////
+//@brief cuenta las lineas, las palabras y los caracteres
+
+
+
+
+#define IN  1   //inside a word
+#define OUT 0   //Outside a word
+int main()
+{
+    int c, numLines, numWord, numchar, state;
+    state=OUT;
+    numchar=numLines=numWord=0;
+
+    while ((c=getchar())!=EOF)  {
+        ++numchar;
+        if (c=='\n')
+            ++numLines;
+        if (c==' ' || c=='\n' || c=='\t')
+            state=OUT;
+        else if (state==OUT){
+            state=IN;
+            ++numWord;
+        }
+    }
+    printf("%d %d %d \n", numLines, numWord, numchar);
+}
+
+
+
 
 
 

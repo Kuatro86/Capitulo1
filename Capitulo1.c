@@ -138,7 +138,7 @@ int main()
 
 ////----SEC 1.6----////
 //@brief Uso de Arrays
-
+/*
 main()
 {
 
@@ -164,5 +164,66 @@ main()
 
 
 }
-
+*/
 //END SEC 1.6
+
+
+
+////----Exercise 1.19 ----////
+//@brief Dal vuelta una linea de texto
+
+
+#define MAXLINE 100 //Valor maximo de la linea
+void reverse (char line[],char revLine[], int maxLine); //Invierte la linea de texto
+int getline(char line[], int maxLine); //Captura una linea de texto
+
+int main()
+{
+
+    char line[MAXLINE];  //Linea original
+    char revLine[MAXLINE]; //Linea invertida
+
+
+    reverse(line,revLine,getline(line,MAXLINE));
+
+    //Imprimir los valores
+    printf("-----SOFT-------\n");
+    printf("%s",line);
+    printf("------------\n");
+    printf("%s",revLine);
+    printf("------------\n");
+}
+
+//Funcion getline - Basicamente pide datos hasta que se un enter, se llega al maximo
+//o un fin de programa
+int getline(char s[], int lim)
+{
+    int c,i;
+
+    //Recorre hasta el limite max, evaluando los valores que va ingrasando
+    for (i=0;i<lim-1 && (c=getchar())!= EOF && c!='\n'; ++i)
+        s[i]=c; //Va formando la linea
+    if (c=='\n')
+        {
+            s[i]=c; // Le agrega el enter
+            ++i;
+        }
+    s[i]='\0'; //Le agrega el cero como final
+    return i;
+}
+
+//Invierte la linea de texto
+void reverse (char l[],char r[], int maxL)
+    {
+        int x;
+        for (x=0; x<=(maxL-2); ++x)
+           r[x]=l[(maxL-x)-2];
+       //Agrega los valores al final
+        r[x]='\n';
+       ++x;
+        r[x]='\0';
+
+    }
+////END Exercise 1.8
+
+
